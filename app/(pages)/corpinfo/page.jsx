@@ -31,13 +31,13 @@ export default function CorporateInfo() {
                     <h1>仕事情報入力</h1>
                     <div className={style.group}>
                         <div className={style["info-text"]}>仕事名</div>
-                        <input type="text" className={`${style["input-data"]} ${style["job-name"]}`} placeholder="仕事名"></input>
+                        <input type="text" className={style["job-name"]} placeholder="仕事名"></input>
                         <div className={`${style["option-icon"]} ${optionOpen ? style.active : ""}`} onClick={toggleOption}>
                             <div></div>
                             <div></div>
                             <div></div>
                         </div>
-                        <div class={`${style["option"]} ${optionOpen ? style.active : ""}`} id="option">
+                        <div className={`${style["option"]} ${optionOpen ? style.active : ""}`} id="option">
                             <div className={style["option-item"]}>編集する</div>
                             <div className={style["option-item"]}>削除する</div>
                         </div>
@@ -49,11 +49,11 @@ export default function CorporateInfo() {
                     </div>
                     <div className={style.group}>
                         <div className={style["info-text"]}>仕事内容</div>
-                        <textarea className={style["input-text-area"]} rows={'5'} cols={'33'}></textarea>
+                        <textarea className={style["input-text-area"]} rows={'5'} cols={'33'} placeholder='仕事内容(詳細)'></textarea>
                     </div>
                     <div className={style.group}>
                         <dvi className={style["info-text"]}>メディア</dvi>
-                        <input type="file" className={style["input-data"]}></input>
+                        <input type="file"></input>
                     </div>
                     <div className={style.group}>
                         <div className={style["info-text"]}>タグ</div>
@@ -64,7 +64,15 @@ export default function CorporateInfo() {
                 </div>
 
                 <div className={style.group}>
-                    <button type="submit" className={`${style["add-info"]} ${style["func-submit"]} ${style["button-module"]}`}>求人を追加する</button>
+                    <button type="submit" className={`${style["add-info"]} ${style["func-submit"]} ${style["button-module"]}`}>
+                        <div className={style["info-circle"]}>
+                            <div className={style["info-cross"]}>
+                                <div></div>
+                                <div></div>
+                            </div>
+                        </div>
+                        求人を追加する
+                    </button>
                 </div>
             </form>
         </div>
