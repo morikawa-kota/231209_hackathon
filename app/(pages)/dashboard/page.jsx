@@ -30,6 +30,9 @@ export default function Dashboard() {
     setIsLoading(true);
     const fetchtData = async () => {
       try {
+        // const response = await fetch(`/api/get_recruits/`, {
+        //   method: "GET",
+        // });
         const response = await fetch(`/api/dashboard/`, {
           method: "GET",
         });
