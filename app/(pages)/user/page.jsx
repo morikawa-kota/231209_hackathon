@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import Autocomplete from '../../components/user/autocomplete.jsx';
+import style from './user.module.css'
 
 export default () => {
   const [nameState, setNameState] = useState('');
@@ -88,13 +89,14 @@ export default () => {
           )
         }
       </div>
-      <dl>
-        <dt>名前</dt>
-        <dd>
+      <dl className={style.dl}>
+        <dt className={style.dt}>名前</dt>
+        <dd className={style.dd}>
           {
             isEditState ? (
               <input
                 type="text"
+                
                 value={nameDraftState}
                 placeholder="名前を入力してください"
                 onChange={(event)=> {
@@ -107,9 +109,9 @@ export default () => {
           }
         </dd>
       </dl>
-      <dl>
-        <dt>住所</dt>
-        <dd>
+      <dl className={style.dl}>
+        <dt className={style.dt}>住所</dt>
+        <dd className={style.dd}>
         {
           isEditState ? (
             <input
@@ -126,9 +128,9 @@ export default () => {
         }
         </dd>
       </dl>
-      <dl>
-        <dt>タグ</dt>
-        <dd>
+      <dl className={style.dl}>
+        <dt className={style.dt}>タグ</dt>
+        <dd className={style.dd}>
           {
             isEditState ? (
               <Autocomplete
@@ -147,6 +149,7 @@ export default () => {
         isEditState && (
           <div>
             <button
+              className={style.updateButton}
               onClick={() => {
                 saveUser();
               }}
@@ -154,6 +157,7 @@ export default () => {
               保存する
             </button>
             <button
+              className={style.cancelButton}
               onClick={() => {
                 setNameDraftState(nameState);
                 setAdressDraftState(adressState);
