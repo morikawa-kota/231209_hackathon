@@ -20,6 +20,7 @@
 
 .campany-name, .campany-address, .job-name, .employee-style, .money-style, .input-text-area {
   background-color: white;
+  color: black;
   border-radius: 8px;
 }
 
