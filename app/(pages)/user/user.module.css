@@ -1,18 +1,47 @@
+.wrapper{
+  padding: 0 30px;
+}
 .dl {
   display: flex;
   flex-wrap: wrap;
+  width: 100%;
 }
 
 .dl .dt {
-  width: 40%;
+  width: 100px;
 }
 
 .dl .dd {
-  width: 60%;
+  flex: 1;
+}
+.buttonWrapper{
+  display: flex;
+  grid-gap: 10px;
+}
+.editButton{
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #C3D4DD;
+  color: #5A7A8C;
+  font-size: 16px;
+  padding: 8px 20px;
 }
 .updateButton{
-  background-color: #0094FF;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #0094FF;
+  color: #fff;
+  font-size: 16px;
+  padding: 8px 20px;
 }
 .cancelButton{
-  background-color: #C3D4DD;
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #C3D4DD;
+  color: #5A7A8C;
+  font-size: 16px;
+  padding: 8px 20px;
 }

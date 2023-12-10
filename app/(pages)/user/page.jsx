@@ -74,12 +74,13 @@ export default () => {
   };
 
   return (
-    <div>
+    <div className={style.wrapper}>
       <div>
         <h1>基本情報入力</h1>
         {
           !isEditState && (
             <button
+              className={style.editButton}
               onClick={() => {
                 setIsEditState(true);
               }}
@@ -147,7 +148,7 @@ export default () => {
       </dl>
       {
         isEditState && (
-          <div>
+          <div className={style.buttonWrapper}>
             <button
               className={style.updateButton}
               onClick={() => {
