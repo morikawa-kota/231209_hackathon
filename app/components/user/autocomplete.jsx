@@ -29,10 +29,10 @@ const Autocomplete = ({ suggestions, selectedTags, onSelect, onRemove }) => {
     onSelect([...selectedSuggestions, e.currentTarget.innerText]);
   };
 
-  const onRemoveSuggestion = (suggestion) => {
+  const onRemoveSuggestion = (event, suggestion) => {
     setSelectedSuggestions(selectedSuggestions.filter(item => item !== suggestion));
     setUserInput('');
-    onRemove([...selectedSuggestions, e.currentTarget.innerText]);
+    onRemove(selectedSuggestions.filter(item => item !== suggestion))
   };
 
   const onKeyDown = e => {
@@ -63,7 +63,7 @@ const Autocomplete = ({ suggestions, selectedTags, onSelect, onRemove }) => {
       {selectedSuggestions?.map((suggestion, index) => (
         <div key={index} className="selected-suggestion">
           <span>{suggestion}</span>
-          <button onClick={() => onRemoveSuggestion(suggestion)}>×</button>
+          <button onClick={(event) => onRemoveSuggestion(event, suggestion)}>×</button>
         </div>
       ))}
     </div>

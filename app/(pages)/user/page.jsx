@@ -18,16 +18,59 @@ export default () => {
   };
 
   const handleRemove = (item) => {
-    setSelectedTags(selectedDraftTags.filter(i => i !== item));
+    setSelectedDraftTags([...item]);
   };
 
   useEffect(() => {
+    const fetchtData = async() => {
+      try {
+        const userId = 1;
+        const response = await fetch(`/api/user/?params=${userId}`, {
+          method: "GET",
+        });
+        const data = await response.json();
+        const userData = data.data;
+        setNameState(userData.name);
+        setAdressState(userData.adress);
+        setSelectedTags(userData.tags);
+        setNameDraftState(userData.name);
+        setAdressDraftState(userData.adress);
+        setSelectedDraftTags(userData.tags);
+      }
+      catch (error) {
+        console.error(error);
+      }
+    }
+    fetchtData();
+
     setSuggestionsList([
       'test1',
       'test2',
       'test3',
-    ])
+    ]);
   }, []);
+
+  function saveUser() {
+    fetch("/api/user/", {
+      method: "PUT",
+      body: JSON.stringify(
+        {
+          name: nameDraftState,
+          adress: adressDraftState,
+          tags: selectedDraftTags,
+        }
+      ),
+    }).then((response) => {
+      response.json().then((data) => {
+        setNameState(nameDraftState);
+        setAdressState(adressDraftState);
+        setSelectedTags(selectedDraftTags);
+        setIsEditState(false);
+      });
+    }).catch((error) => {
+      console.error(error);
+    });
+  };
 
   return (
     <div>
@@ -105,10 +148,7 @@ export default () => {
           <div>
             <button
               onClick={() => {
-                setNameState(nameDraftState);
-                setAdressState(adressDraftState);
-                setSelectedTags(selectedDraftTags);
-                setIsEditState(false);
+                saveUser();
               }}
             >
               保存する
