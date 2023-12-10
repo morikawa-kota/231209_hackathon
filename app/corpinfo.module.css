@@ -2,7 +2,7 @@
   margin: 30px;
 }
 
-.contnet {
+.job-info, .standard-info {
   padding-bottom: 2%;
 }
 
@@ -76,15 +76,15 @@
   background-color: white;
   display: inline-block;
   position: relative;
-  top: -1%;
-  right: 5%;
+  top: 7%;
+  right: 3%;
 }
 
 .info-cross {
   display: inline-block;
   flex-direction: column;
   position: relative;
-  top: -2%;
+  top: -30%;
 }
 
 .info-cross div {
@@ -141,6 +141,8 @@
   cursor: pointer;
   color: black;
   width: 350px;
+  border-color: white;
+  background-color: white;
 }
 
 .option-item:hover {
