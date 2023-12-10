@@ -49,13 +49,20 @@ export default function Dashboard() {
       <h1 className={style.h1}>あなたへのおすすめ</h1>
       <div className={style.cardList}>
         {data.length && (
-          data.map((item) => (<Card data={item} onClick={joinWork} />))
+          data.map((item, key) => (
+            <div key={key}>
+            <Card data={item} onClick={joinWork} />
+            </div>
+          ))
         )}
       </div>
       <h1 className={style.h1}>募集中の求人</h1>
       <div className={style.cardList}>
         {data.length && (
-          data.map((item) => (<Card data={item} onClick={joinWork} />))
+          data.map((item, key) => (<div key={key}>
+            <Card data={item} onClick={joinWork} />
+          </div>
+          ))
         )}
       </div>
     </div >}
