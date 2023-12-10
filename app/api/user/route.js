@@ -5,7 +5,7 @@ export async function GET(request) {
   const user = {
     name: "山田 太郎",
     adress: "住所",
-    tags: ["アニメ", "マンガ", "ゲーム"],
+    tags: ["アニメ", "マンガ", "語学"],
   };
   return NextResponse.json(
     { data: user, status: 200 }
