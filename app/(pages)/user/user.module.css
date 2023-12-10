@@ -1,0 +1,18 @@
+.dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.dl .dt {
+  width: 40%;
+}
+
+.dl .dd {
+  width: 60%;
+}
+.updateButton{
+  background-color: #0094FF;
+}
+.cancelButton{
+  background-color: #C3D4DD;
+}
